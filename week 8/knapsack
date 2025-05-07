@@ -3,16 +3,16 @@
 #define MAX_ITEMS 100
 #define MAX_CAPACITY 100
 
-// Function to return the maximum of two numbers
+
 int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
-// Knapsack function with table display
+
 int knapsack_01(int n, int W, int wt[], int val[]) {
     int dp[MAX_ITEMS][MAX_CAPACITY];
 
-    // Initialize dp table with 0s
+    
     for (int i = 0; i <= n; i++) {
         for (int w = 0; w <= W; w++) {
             if (i == 0 || w == 0)
@@ -20,7 +20,7 @@ int knapsack_01(int n, int W, int wt[], int val[]) {
         }
     }
 
-    // Fill DP table
+ 
     for (int i = 1; i <= n; i++) {
         for (int w = 0; w <= W; w++) {
             if (wt[i - 1] <= w)
@@ -30,7 +30,7 @@ int knapsack_01(int n, int W, int wt[], int val[]) {
         }
     }
 
-    // Print the table
+ 
     printf("\nDP Table:\n");
     printf("        ");
     for (int w = 0; w <= W; w++)
